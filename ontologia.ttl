@@ -1,0 +1,135 @@
+
+#  ontologia.ttl
+#  Ontología del proyecto: ETFs, empresas, sectores y países.
+#
+#  Este archivo NO contiene datos (ni Apple, ni ningún ETF concreto).
+#  Solo define las reglas del juego: qué tipos de cosas existen
+#  (clases) y cómo se pueden relacionar (propiedades).
+#
+#  En Turtle, todo lo que va detrás de # es un comentario.
+
+
+
+#  1. PREFIJOS
+#  Abreviaturas para no escribir URLs completas. Funcionan igual que
+#  EX = Namespace(...) en Python.
+
+
+@prefix ex:   <http://ejemplo.org/> .                      # nuestro vocabulario
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .    # etiquetas, dominio, rango
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .           # clases y propiedades
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .        # tipos de dato (texto, fecha…)
+
+
+
+#  2. CABECERA
+#  Declara que este archivo es una ontología y la describe.
+
+<http://ejemplo.org/ontologia>
+    a owl:Ontology ;                       # "a" significa "es un/una"
+    rdfs:label "Ontología de ETFs"@es ;    # @es indica que el texto está en español
+    rdfs:comment "Modela qué empresas contienen los ETFs y en qué sector y país están."@es .
+
+
+#  3. CLASES
+#  Los cuatro tipos de cosas que existen en nuestro mundo.
+#  El ";" permite seguir describiendo el mismo sujeto sin repetirlo,
+#  y el "." cierra la descripción.
+
+
+ex:ETF
+    a owl:Class ;
+    rdfs:label "ETF"@es ;
+    rdfs:comment "Fondo cotizado. Se identifica por su ISIN."@es .
+
+ex:Empresa
+    a owl:Class ;
+    rdfs:label "Empresa"@es ;
+    rdfs:comment "Compañía cotizada. Se identifica por su ticker."@es .
+
+ex:Sector
+    a owl:Class ;
+    rdfs:label "Sector"@es ;
+    rdfs:comment "Uno de los 11 sectores de la clasificación GICS."@es .
+
+ex:Pais
+    a owl:Class ;
+    rdfs:label "País"@es ;
+    rdfs:comment "País de la sede. Se identifica por su código ISO de 2 letras."@es .
+
+
+
+#  4. RELACIONES ENTRE CLASES (object properties)
+#  Son las flechas del esquema.
+#    rdfs:domain = clase de la que SALE la flecha
+#    rdfs:range  = clase a la que LLEGA la flecha
+#  Estas dos líneas son las que permiten razonar: si alguien escribe
+#  "X contiene Y", el razonador deduce que X es un ETF e Y una Empresa.
+
+
+ex:contiene
+    a owl:ObjectProperty ;
+    rdfs:label "contiene"@es ;
+    rdfs:domain ex:ETF ;
+    rdfs:range  ex:Empresa .
+
+ex:perteneceA
+    a owl:ObjectProperty ;
+    rdfs:label "pertenece a"@es ;
+    rdfs:domain ex:Empresa ;
+    rdfs:range  ex:Sector .
+
+ex:tieneSedeEn
+    a owl:ObjectProperty ;
+    rdfs:label "tiene sede en"@es ;
+    rdfs:domain ex:Empresa ;
+    rdfs:range  ex:Pais .
+
+
+
+#  5. DATOS DE CADA CLASE (datatype properties)
+#  Son los textos dentro de las cajas del esquema. A diferencia de
+#  las relaciones, no apuntan a otra cosa del grafo sino a un valor
+#  simple: un texto o una fecha (por eso el rango es un tipo xsd).
+#  El nombre legible de cada cosa irá en rdfs:label, que ya existe.
+
+
+ex:isin
+    a owl:DatatypeProperty ;
+    rdfs:label "ISIN"@es ;
+    rdfs:domain ex:ETF ;
+    rdfs:range  xsd:string .
+
+ex:fechaDatos
+    a owl:DatatypeProperty ;
+    rdfs:label "fecha de los datos"@es ;
+    rdfs:comment "Fecha de la ficha oficial de la que salen las posiciones. Es la clave de la trazabilidad."@es ;
+    rdfs:domain ex:ETF ;
+    rdfs:range  xsd:date .
+
+ex:ticker
+    a owl:DatatypeProperty ;
+    rdfs:label "ticker"@es ;
+    rdfs:domain ex:Empresa ;
+    rdfs:range  xsd:string .
+
+ex:codigoISO
+    a owl:DatatypeProperty ;
+    rdfs:label "código ISO"@es ;
+    rdfs:domain ex:Pais ;
+    rdfs:range  xsd:string .
+
+
+
+#  6. PENDIENTE PARA LA SIGUIENTE VERSIÓN
+#  El peso de una empresa dentro de un ETF no es un dato de la empresa
+#  ni del ETF, sino de la relación entre ambos. Para guardarlo haría
+#  falta una clase intermedia:
+#
+#     ETF --tienePosicion--> Posicion --deEmpresa--> Empresa
+#                               |
+#                             peso (xsd:decimal)
+#
+#  Se deja fuera a propósito para mantener el proyecto simple.
+

@@ -1,0 +1,269 @@
+@prefix ex: <http://ejemplo.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:IE00B4K48X80 a ex:ETF ;
+    rdfs:label "iShares Core MSCI Europe UCITS ETF" ;
+    ex:contiene ex:ASML,
+        ex:AZN,
+        ex:HSBA,
+        ex:NESN,
+        ex:NOVN,
+        ex:ROG,
+        ex:SAN,
+        ex:SAP,
+        ex:SHEL,
+        ex:SIE ;
+    ex:fechaDatos "2026-09-30"^^xsd:date ;
+    ex:fuente "https://www.trackinsight.com/en/fund/SMEA/holdings"^^xsd:anyURI ;
+    ex:isin "IE00B4K48X80" .
+
+ex:IE00B4L5Y983 a ex:ETF ;
+    rdfs:label "iShares Core MSCI World UCITS ETF" ;
+    ex:contiene ex:AAPL,
+        ex:AMZN,
+        ex:AVGO,
+        ex:GOOGL,
+        ex:META,
+        ex:MSFT,
+        ex:MU,
+        ex:NVDA,
+        ex:TSLA ;
+    ex:fechaDatos "2026-09-18"^^xsd:date ;
+    ex:fuente "https://stockanalysis.com/quote/lon/SWDA/holdings/"^^xsd:anyURI ;
+    ex:isin "IE00B4L5Y983" .
+
+ex:IE00B5BMR087 a ex:ETF ;
+    rdfs:label "iShares Core S&P 500 UCITS ETF" ;
+    ex:contiene ex:AAPL,
+        ex:AMZN,
+        ex:AVGO,
+        ex:GOOGL,
+        ex:META,
+        ex:MSFT,
+        ex:MU,
+        ex:NVDA,
+        ex:TSLA ;
+    ex:fechaDatos "2026-09-11"^^xsd:date ;
+    ex:fuente "https://stockanalysis.com/quote/lon/CSP1/holdings/"^^xsd:anyURI ;
+    ex:isin "IE00B5BMR087" .
+
+ex:codigoISO a owl:DatatypeProperty ;
+    rdfs:label "código ISO"@es ;
+    rdfs:domain ex:Pais ;
+    rdfs:range xsd:string .
+
+ex:contiene a owl:ObjectProperty ;
+    rdfs:label "contiene"@es ;
+    rdfs:domain ex:ETF ;
+    rdfs:range ex:Empresa .
+
+ex:fechaDatos a owl:DatatypeProperty ;
+    rdfs:label "fecha de los datos"@es ;
+    rdfs:comment "Fecha de la ficha oficial de la que salen las posiciones. Es la clave de la trazabilidad."@es ;
+    rdfs:domain ex:ETF ;
+    rdfs:range xsd:date .
+
+ex:isin a owl:DatatypeProperty ;
+    rdfs:label "ISIN"@es ;
+    rdfs:domain ex:ETF ;
+    rdfs:range xsd:string .
+
+ex:ontologia a owl:Ontology ;
+    rdfs:label "Ontología de ETFs"@es ;
+    rdfs:comment "Modela qué empresas contienen los ETFs y en qué sector y país están."@es .
+
+ex:perteneceA a owl:ObjectProperty ;
+    rdfs:label "pertenece a"@es ;
+    rdfs:domain ex:Empresa ;
+    rdfs:range ex:Sector .
+
+ex:ticker a owl:DatatypeProperty ;
+    rdfs:label "ticker"@es ;
+    rdfs:domain ex:Empresa ;
+    rdfs:range xsd:string .
+
+ex:tieneSedeEn a owl:ObjectProperty ;
+    rdfs:label "tiene sede en"@es ;
+    rdfs:domain ex:Empresa ;
+    rdfs:range ex:Pais .
+
+ex:ASML a ex:Empresa ;
+    rdfs:label "ASML Holding NV" ;
+    ex:perteneceA ex:InformationTechnology ;
+    ex:ticker "ASML" ;
+    ex:tieneSedeEn ex:NL .
+
+ex:AZN a ex:Empresa ;
+    rdfs:label "AstraZeneca plc" ;
+    ex:perteneceA ex:HealthCare ;
+    ex:ticker "AZN" ;
+    ex:tieneSedeEn ex:GB .
+
+ex:ConsumerStaples a ex:Sector ;
+    rdfs:label "Consumer Staples" .
+
+ex:ES a ex:Pais ;
+    rdfs:label "España"@es ;
+    ex:codigoISO "ES" .
+
+ex:Energy a ex:Sector ;
+    rdfs:label "Energy" .
+
+ex:HSBA a ex:Empresa ;
+    rdfs:label "HSBC Holdings plc" ;
+    ex:perteneceA ex:Financials ;
+    ex:ticker "HSBA" ;
+    ex:tieneSedeEn ex:GB .
+
+ex:Industrials a ex:Sector ;
+    rdfs:label "Industrials" .
+
+ex:NESN a ex:Empresa ;
+    rdfs:label "Nestlé SA" ;
+    ex:perteneceA ex:ConsumerStaples ;
+    ex:ticker "NESN" ;
+    ex:tieneSedeEn ex:CH .
+
+ex:NL a ex:Pais ;
+    rdfs:label "Países Bajos"@es ;
+    ex:codigoISO "NL" .
+
+ex:NOVN a ex:Empresa ;
+    rdfs:label "Novartis AG" ;
+    ex:perteneceA ex:HealthCare ;
+    ex:ticker "NOVN" ;
+    ex:tieneSedeEn ex:CH .
+
+ex:ROG a ex:Empresa ;
+    rdfs:label "Roche Holding AG" ;
+    ex:perteneceA ex:HealthCare ;
+    ex:ticker "ROG" ;
+    ex:tieneSedeEn ex:CH .
+
+ex:SAN a ex:Empresa ;
+    rdfs:label "Banco Santander SA" ;
+    ex:perteneceA ex:Financials ;
+    ex:ticker "SAN" ;
+    ex:tieneSedeEn ex:ES .
+
+ex:SAP a ex:Empresa ;
+    rdfs:label "SAP SE" ;
+    ex:perteneceA ex:InformationTechnology ;
+    ex:ticker "SAP" ;
+    ex:tieneSedeEn ex:DE .
+
+ex:SHEL a ex:Empresa ;
+    rdfs:label "Shell plc" ;
+    ex:perteneceA ex:Energy ;
+    ex:ticker "SHEL" ;
+    ex:tieneSedeEn ex:GB .
+
+ex:SIE a ex:Empresa ;
+    rdfs:label "Siemens AG" ;
+    ex:perteneceA ex:Industrials ;
+    ex:ticker "SIE" ;
+    ex:tieneSedeEn ex:DE .
+
+ex:AAPL a ex:Empresa ;
+    rdfs:label "Apple Inc." ;
+    ex:perteneceA ex:InformationTechnology ;
+    ex:ticker "AAPL" ;
+    ex:tieneSedeEn ex:US .
+
+ex:AMZN a ex:Empresa ;
+    rdfs:label "Amazon.com Inc." ;
+    ex:perteneceA ex:ConsumerDiscretionary ;
+    ex:ticker "AMZN" ;
+    ex:tieneSedeEn ex:US .
+
+ex:AVGO a ex:Empresa ;
+    rdfs:label "Broadcom Inc." ;
+    ex:perteneceA ex:InformationTechnology ;
+    ex:ticker "AVGO" ;
+    ex:tieneSedeEn ex:US .
+
+ex:CommunicationServices a ex:Sector ;
+    rdfs:label "Communication Services" .
+
+ex:ConsumerDiscretionary a ex:Sector ;
+    rdfs:label "Consumer Discretionary" .
+
+ex:DE a ex:Pais ;
+    rdfs:label "Alemania"@es ;
+    ex:codigoISO "DE" .
+
+ex:Financials a ex:Sector ;
+    rdfs:label "Financials" .
+
+ex:GOOGL a ex:Empresa ;
+    rdfs:label "Alphabet Inc." ;
+    ex:perteneceA ex:CommunicationServices ;
+    ex:ticker "GOOGL" ;
+    ex:tieneSedeEn ex:US .
+
+ex:META a ex:Empresa ;
+    rdfs:label "Meta Platforms Inc." ;
+    ex:perteneceA ex:CommunicationServices ;
+    ex:ticker "META" ;
+    ex:tieneSedeEn ex:US .
+
+ex:MSFT a ex:Empresa ;
+    rdfs:label "Microsoft Corporation" ;
+    ex:perteneceA ex:InformationTechnology ;
+    ex:ticker "MSFT" ;
+    ex:tieneSedeEn ex:US .
+
+ex:MU a ex:Empresa ;
+    rdfs:label "Micron Technology Inc." ;
+    ex:perteneceA ex:InformationTechnology ;
+    ex:ticker "MU" ;
+    ex:tieneSedeEn ex:US .
+
+ex:NVDA a ex:Empresa ;
+    rdfs:label "NVIDIA Corporation" ;
+    ex:perteneceA ex:InformationTechnology ;
+    ex:ticker "NVDA" ;
+    ex:tieneSedeEn ex:US .
+
+ex:TSLA a ex:Empresa ;
+    rdfs:label "Tesla Inc." ;
+    ex:perteneceA ex:ConsumerDiscretionary ;
+    ex:ticker "TSLA" ;
+    ex:tieneSedeEn ex:US .
+
+ex:CH a ex:Pais ;
+    rdfs:label "Suiza"@es ;
+    ex:codigoISO "CH" .
+
+ex:GB a ex:Pais ;
+    rdfs:label "Reino Unido"@es ;
+    ex:codigoISO "GB" .
+
+ex:HealthCare a ex:Sector ;
+    rdfs:label "Health Care" .
+
+ex:ETF a owl:Class ;
+    rdfs:label "ETF"@es ;
+    rdfs:comment "Fondo cotizado. Se identifica por su ISIN."@es .
+
+ex:InformationTechnology a ex:Sector ;
+    rdfs:label "Information Technology" .
+
+ex:Pais a owl:Class ;
+    rdfs:label "País"@es ;
+    rdfs:comment "País de la sede. Se identifica por su código ISO de 2 letras."@es .
+
+ex:Sector a owl:Class ;
+    rdfs:label "Sector"@es ;
+    rdfs:comment "Uno de los 11 sectores de la clasificación GICS."@es .
+
+ex:US a ex:Pais ;
+    rdfs:label "Estados Unidos"@es ;
+    ex:codigoISO "US" .
+
+ex:Empresa a owl:Class ;
+    rdfs:label "Empresa"@es ;
+    rdfs:comment "Compañía cotizada. Se identifica por su ticker."@es .
+
