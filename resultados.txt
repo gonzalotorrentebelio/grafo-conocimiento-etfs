@@ -1,0 +1,64 @@
+1. ¿Qué empresas están en más de uno de mis ETFs?
+empresa                 num_etfs
+----------------------  --------
+Alphabet Inc.           2       
+Amazon.com Inc.         2       
+Apple Inc.              2       
+Broadcom Inc.           2       
+Meta Platforms Inc.     2       
+Micron Technology Inc.  2       
+Microsoft Corporation   2       
+NVIDIA Corporation      2       
+Tesla Inc.              2       
+2. ¿Cuántas empresas comparte cada par de ETFs?
+etf_a                              etf_b                           compartidas
+---------------------------------  ------------------------------  -----------
+iShares Core MSCI World UCITS ETF  iShares Core S&P 500 UCITS ETF  9          
+3. ¿Cuántas posiciones tiene cada ETF en cada sector?
+etf                                 sector                  posiciones
+----------------------------------  ----------------------  ----------
+iShares Core MSCI Europe UCITS ETF  Health Care             3         
+iShares Core MSCI Europe UCITS ETF  Information Technology  2         
+iShares Core MSCI Europe UCITS ETF  Financials              2         
+iShares Core MSCI Europe UCITS ETF  Consumer Staples        1         
+iShares Core MSCI Europe UCITS ETF  Energy                  1         
+iShares Core MSCI Europe UCITS ETF  Industrials             1         
+iShares Core MSCI World UCITS ETF   Information Technology  5         
+iShares Core MSCI World UCITS ETF   Consumer Discretionary  2         
+iShares Core MSCI World UCITS ETF   Communication Services  2         
+iShares Core S&P 500 UCITS ETF      Information Technology  5         
+iShares Core S&P 500 UCITS ETF      Consumer Discretionary  2         
+iShares Core S&P 500 UCITS ETF      Communication Services  2         
+4. ¿Qué ETFs tienen empresas tecnológicas estadounidenses (y cuáles)?
+etf                                empresas                  
+---------------------------------  --------------------------
+iShares Core MSCI World UCITS ETF  AAPL, AVGO, MSFT, MU, NVDA
+iShares Core S&P 500 UCITS ETF     AAPL, AVGO, MSFT, MU, NVDA
+5. ¿En cuántas empresas y países distintos invierten (top 10)?
+empresas_distintas  paises_distintos
+------------------  ----------------
+19                  6               
+6. ¿Qué empresas no estadounidenses tengo?
+empresa             pais  etf                               
+------------------  ----  ----------------------------------
+Nestlé SA           CH    iShares Core MSCI Europe UCITS ETF
+Novartis AG         CH    iShares Core MSCI Europe UCITS ETF
+Roche Holding AG    CH    iShares Core MSCI Europe UCITS ETF
+SAP SE              DE    iShares Core MSCI Europe UCITS ETF
+Siemens AG          DE    iShares Core MSCI Europe UCITS ETF
+Banco Santander SA  ES    iShares Core MSCI Europe UCITS ETF
+AstraZeneca plc     GB    iShares Core MSCI Europe UCITS ETF
+HSBC Holdings plc   GB    iShares Core MSCI Europe UCITS ETF
+Shell plc           GB    iShares Core MSCI Europe UCITS ETF
+ASML Holding NV     NL    iShares Core MSCI Europe UCITS ETF
+7. ¿A través de qué ETFs estoy expuesto a NVIDIA?
+etf                              
+---------------------------------
+iShares Core MSCI World UCITS ETF
+iShares Core S&P 500 UCITS ETF   
+8. ¿De qué fecha y fuente son los datos de cada ETF?
+etf                                 fecha       fuente                                            
+----------------------------------  ----------  --------------------------------------------------
+iShares Core S&P 500 UCITS ETF      2026-09-11  https://stockanalysis.com/quote/lon/CSP1/holdings/
+iShares Core MSCI World UCITS ETF   2026-09-18  https://stockanalysis.com/quote/lon/SWDA/holdings/
+iShares Core MSCI Europe UCITS ETF  2026-09-30  https://www.trackinsight.com/en/fund/SMEA/holdings

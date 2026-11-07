@@ -1,0 +1,29 @@
+etf_isin,etf_nombre,fecha_datos,ticker,empresa_nombre,sector,pais,peso,fuente
+IE00B4L5Y983,iShares Core MSCI World UCITS ETF,2026-09-18,NVDA,NVIDIA Corporation,Information Technology,US,5.62,https://stockanalysis.com/quote/lon/SWDA/holdings/
+IE00B4L5Y983,iShares Core MSCI World UCITS ETF,2026-09-18,AAPL,Apple Inc.,Information Technology,US,5.43,https://stockanalysis.com/quote/lon/SWDA/holdings/
+IE00B4L5Y983,iShares Core MSCI World UCITS ETF,2026-09-18,GOOGL,Alphabet Inc.,Communication Services,US,4.03,https://stockanalysis.com/quote/lon/SWDA/holdings/
+IE00B4L5Y983,iShares Core MSCI World UCITS ETF,2026-09-18,MSFT,Microsoft Corporation,Information Technology,US,3.83,https://stockanalysis.com/quote/lon/SWDA/holdings/
+IE00B4L5Y983,iShares Core MSCI World UCITS ETF,2026-09-18,AMZN,Amazon.com Inc.,Consumer Discretionary,US,2.70,https://stockanalysis.com/quote/lon/SWDA/holdings/
+IE00B4L5Y983,iShares Core MSCI World UCITS ETF,2026-09-18,AVGO,Broadcom Inc.,Information Technology,US,1.77,https://stockanalysis.com/quote/lon/SWDA/holdings/
+IE00B4L5Y983,iShares Core MSCI World UCITS ETF,2026-09-18,META,Meta Platforms Inc.,Communication Services,US,1.61,https://stockanalysis.com/quote/lon/SWDA/holdings/
+IE00B4L5Y983,iShares Core MSCI World UCITS ETF,2026-09-18,MU,Micron Technology Inc.,Information Technology,US,1.26,https://stockanalysis.com/quote/lon/SWDA/holdings/
+IE00B4L5Y983,iShares Core MSCI World UCITS ETF,2026-09-18,TSLA,Tesla Inc.,Consumer Discretionary,US,1.15,https://stockanalysis.com/quote/lon/SWDA/holdings/
+IE00B5BMR087,iShares Core S&P 500 UCITS ETF,2026-09-11,NVDA,NVIDIA Corporation,Information Technology,US,8.01,https://stockanalysis.com/quote/lon/CSP1/holdings/
+IE00B5BMR087,iShares Core S&P 500 UCITS ETF,2026-09-11,AAPL,Apple Inc.,Information Technology,US,7.39,https://stockanalysis.com/quote/lon/CSP1/holdings/
+IE00B5BMR087,iShares Core S&P 500 UCITS ETF,2026-09-11,MSFT,Microsoft Corporation,Information Technology,US,5.58,https://stockanalysis.com/quote/lon/CSP1/holdings/
+IE00B5BMR087,iShares Core S&P 500 UCITS ETF,2026-09-11,GOOGL,Alphabet Inc.,Communication Services,US,5.41,https://stockanalysis.com/quote/lon/CSP1/holdings/
+IE00B5BMR087,iShares Core S&P 500 UCITS ETF,2026-09-11,AMZN,Amazon.com Inc.,Consumer Discretionary,US,3.81,https://stockanalysis.com/quote/lon/CSP1/holdings/
+IE00B5BMR087,iShares Core S&P 500 UCITS ETF,2026-09-11,AVGO,Broadcom Inc.,Information Technology,US,2.60,https://stockanalysis.com/quote/lon/CSP1/holdings/
+IE00B5BMR087,iShares Core S&P 500 UCITS ETF,2026-09-11,META,Meta Platforms Inc.,Communication Services,US,2.15,https://stockanalysis.com/quote/lon/CSP1/holdings/
+IE00B5BMR087,iShares Core S&P 500 UCITS ETF,2026-09-11,MU,Micron Technology Inc.,Information Technology,US,1.67,https://stockanalysis.com/quote/lon/CSP1/holdings/
+IE00B5BMR087,iShares Core S&P 500 UCITS ETF,2026-09-11,TSLA,Tesla Inc.,Consumer Discretionary,US,1.56,https://stockanalysis.com/quote/lon/CSP1/holdings/
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,ASML,ASML Holding NV,Information Technology,NL,5.12,https://www.trackinsight.com/en/fund/SMEA/holdings
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,HSBA,HSBC Holdings plc,Financials,GB,2.49,https://www.trackinsight.com/en/fund/SMEA/holdings
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,ROG,Roche Holding AG,Health Care,CH,2.14,https://www.trackinsight.com/en/fund/SMEA/holdings
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,SHEL,Shell plc,Energy,GB,2.00,https://www.trackinsight.com/en/fund/SMEA/holdings
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,NOVN,Novartis AG,Health Care,CH,1.91,https://www.trackinsight.com/en/fund/SMEA/holdings
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,AZN,AstraZeneca plc,Health Care,GB,1.79,https://www.trackinsight.com/en/fund/SMEA/holdings
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,NESN,Nestlé SA,Consumer Staples,CH,1.71,https://www.trackinsight.com/en/fund/SMEA/holdings
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,SIE,Siemens AG,Industrials,DE,1.65,https://www.trackinsight.com/en/fund/SMEA/holdings
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,SAP,SAP SE,Information Technology,DE,1.56,https://www.trackinsight.com/en/fund/SMEA/holdings
+IE00B4K48X80,iShares Core MSCI Europe UCITS ETF,2026-09-30,SAN,Banco Santander SA,Financials,ES,1.45,https://www.trackinsight.com/en/fund/SMEA/holdings
