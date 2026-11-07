@@ -65,6 +65,12 @@ ex:fechaDatos a owl:DatatypeProperty ;
     rdfs:domain ex:ETF ;
     rdfs:range xsd:date .
 
+ex:fuente a owl:DatatypeProperty ;
+    rdfs:label "fuente"@es ;
+    rdfs:comment "Página web de la que salen las posiciones del ETF. Junto con fechaDatos, permite rastrear cada dato hasta su origen."@es ;
+    rdfs:domain ex:ETF ;
+    rdfs:range xsd:anyURI .
+
 ex:isin a owl:DatatypeProperty ;
     rdfs:label "ISIN"@es ;
     rdfs:domain ex:ETF ;

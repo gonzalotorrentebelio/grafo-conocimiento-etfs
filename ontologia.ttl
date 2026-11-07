@@ -1,19 +1,21 @@
-
+# =====================================================================
 #  ontologia.ttl
 #  Ontología del proyecto: ETFs, empresas, sectores y países.
 #
 #  Este archivo NO contiene datos (ni Apple, ni ningún ETF concreto).
 #  Solo define las reglas del juego: qué tipos de cosas existen
 #  (clases) y cómo se pueden relacionar (propiedades).
+#  Los datos reales se cargarán en la sesión 3 desde un CSV.
 #
 #  En Turtle, todo lo que va detrás de # es un comentario.
+# =====================================================================
 
 
-
+# ---------------------------------------------------------------------
 #  1. PREFIJOS
 #  Abreviaturas para no escribir URLs completas. Funcionan igual que
 #  EX = Namespace(...) en Python.
-
+# ---------------------------------------------------------------------
 
 @prefix ex:   <http://ejemplo.org/> .                      # nuestro vocabulario
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -22,9 +24,10 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .        # tipos de dato (texto, fecha…)
 
 
-
+# ---------------------------------------------------------------------
 #  2. CABECERA
 #  Declara que este archivo es una ontología y la describe.
+# ---------------------------------------------------------------------
 
 <http://ejemplo.org/ontologia>
     a owl:Ontology ;                       # "a" significa "es un/una"
@@ -32,11 +35,12 @@
     rdfs:comment "Modela qué empresas contienen los ETFs y en qué sector y país están."@es .
 
 
+# ---------------------------------------------------------------------
 #  3. CLASES
 #  Los cuatro tipos de cosas que existen en nuestro mundo.
 #  El ";" permite seguir describiendo el mismo sujeto sin repetirlo,
 #  y el "." cierra la descripción.
-
+# ---------------------------------------------------------------------
 
 ex:ETF
     a owl:Class ;
@@ -59,14 +63,14 @@ ex:Pais
     rdfs:comment "País de la sede. Se identifica por su código ISO de 2 letras."@es .
 
 
-
+# ---------------------------------------------------------------------
 #  4. RELACIONES ENTRE CLASES (object properties)
 #  Son las flechas del esquema.
 #    rdfs:domain = clase de la que SALE la flecha
 #    rdfs:range  = clase a la que LLEGA la flecha
 #  Estas dos líneas son las que permiten razonar: si alguien escribe
 #  "X contiene Y", el razonador deduce que X es un ETF e Y una Empresa.
-
+# ---------------------------------------------------------------------
 
 ex:contiene
     a owl:ObjectProperty ;
@@ -87,13 +91,13 @@ ex:tieneSedeEn
     rdfs:range  ex:Pais .
 
 
-
+# ---------------------------------------------------------------------
 #  5. DATOS DE CADA CLASE (datatype properties)
 #  Son los textos dentro de las cajas del esquema. A diferencia de
 #  las relaciones, no apuntan a otra cosa del grafo sino a un valor
 #  simple: un texto o una fecha (por eso el rango es un tipo xsd).
 #  El nombre legible de cada cosa irá en rdfs:label, que ya existe.
-
+# ---------------------------------------------------------------------
 
 ex:isin
     a owl:DatatypeProperty ;
@@ -108,6 +112,13 @@ ex:fechaDatos
     rdfs:domain ex:ETF ;
     rdfs:range  xsd:date .
 
+ex:fuente
+    a owl:DatatypeProperty ;
+    rdfs:label "fuente"@es ;
+    rdfs:comment "Página web de la que salen las posiciones del ETF. Junto con fechaDatos, permite rastrear cada dato hasta su origen."@es ;
+    rdfs:domain ex:ETF ;
+    rdfs:range  xsd:anyURI .
+
 ex:ticker
     a owl:DatatypeProperty ;
     rdfs:label "ticker"@es ;
@@ -121,7 +132,7 @@ ex:codigoISO
     rdfs:range  xsd:string .
 
 
-
+# ---------------------------------------------------------------------
 #  6. PENDIENTE PARA LA SIGUIENTE VERSIÓN
 #  El peso de una empresa dentro de un ETF no es un dato de la empresa
 #  ni del ETF, sino de la relación entre ambos. Para guardarlo haría
@@ -132,4 +143,4 @@ ex:codigoISO
 #                             peso (xsd:decimal)
 #
 #  Se deja fuera a propósito para mantener el proyecto simple.
-
+# ---------------------------------------------------------------------
